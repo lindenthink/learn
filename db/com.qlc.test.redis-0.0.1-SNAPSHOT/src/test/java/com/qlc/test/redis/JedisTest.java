@@ -2,6 +2,7 @@ package com.qlc.test.redis;
 
 import java.util.Set;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
@@ -38,6 +39,7 @@ public class JedisTest {
 		}
 		jedis.close();
 	}
+	
 	/**
 	 * redisPool
 	 */
@@ -47,6 +49,7 @@ public class JedisTest {
 		System.out.println(jedis.ping());
 		JedisPoolTest.pool.returnResource(jedis);
 	}
+	
 	/**
 	 * JedisSharedInfo
 	 */
@@ -56,6 +59,7 @@ public class JedisTest {
 		jedis.set("test", "SharedJedisPoolTest!");
 		SharedJedisPoolTest.pool.returnResource(jedis);
 	}
+	
 	/**
 	 * integrate with spring
 	 */
@@ -69,5 +73,9 @@ public class JedisTest {
 		ShardedJedis jedis = shardedJedisPool.getResource();
 		System.out.println(jedis.exists("key1"));
 		shardedJedisPool.returnResource(jedis);
+	}
+	@After
+	public void after(){
+		shardedJedisPool.destroy();
 	}
 }
