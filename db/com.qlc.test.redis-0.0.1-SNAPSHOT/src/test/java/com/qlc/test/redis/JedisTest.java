@@ -76,6 +76,6 @@ public class JedisTest {
 	}
 	@After
 	public void after(){
-		shardedJedisPool.destroy();
+		if(null != shardedJedisPool) shardedJedisPool.destroy();
 	}
 }
