@@ -1,17 +1,17 @@
 #[eclipse ignore files]
 #eclipse-root
-*/.metadata/*
-*/.recommenders/*
-*/RemoteSystemsTempFiles/*
-*/Servers/*
+.metadata/
+.recommenders/
+RemoteSystemsTempFiles/
+Servers/
 
 #eclipse-project
-*/.classpath
-*/.gitignore
-*/.project
-*/.settings/*
+.classpath
+.gitignore
+.project
+.settings
 
 
-*/.springBeans
-*/.springWebflow
+.springBeans
+.springWebflow
 
