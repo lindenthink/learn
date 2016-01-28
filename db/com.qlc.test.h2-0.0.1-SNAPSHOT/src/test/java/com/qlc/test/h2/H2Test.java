@@ -14,8 +14,29 @@ import org.junit.Test;
  */
 public class H2Test {
 	@Test
-	public void testConn() throws SQLException{
+	/**
+	 * 测试本地连接，实质是访问本地数据库文件
+	 * @throws SQLException
+	 */
+	public void testLocalConn() throws SQLException{
 		Connection conn = new H2LocalConn().getCon();
+		Statement statement = conn.createStatement();
+		String sql = "select * from test";
+		ResultSet rs = statement.executeQuery(sql);
+		while (rs.next()) {
+			System.out.println("ID:"+rs.getString(1)+"\tNAME:"+rs.getString(2));
+		}
+		statement.close();
+		conn.close();
+	}
+	
+	@Test
+	/**
+	 * 测试远程连接，须开启h2服务
+	 * @throws SQLException
+	 */
+	public void testRemoteConn() throws SQLException{
+		Connection conn = new H2RemoteConn().getCon();
 		Statement statement = conn.createStatement();
 		String sql = "select * from test";
 		ResultSet rs = statement.executeQuery(sql);
