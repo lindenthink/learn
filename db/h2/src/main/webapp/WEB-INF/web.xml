@@ -11,6 +11,7 @@
   </listener>
   
   <!-- h2控制台，方便管理 -->
+  <!-- 本例访问地址:http://localhost:8080/h2/console -->
   <servlet>
   	<servlet-name>H2-WebConsole</servlet-name>
   	<servlet-class>org.h2.server.web.WebServlet</servlet-class>
