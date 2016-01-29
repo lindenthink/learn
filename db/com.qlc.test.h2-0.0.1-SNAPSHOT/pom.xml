@@ -21,7 +21,12 @@
 			<version>2.5</version>
 			<scope>provided</scope>
 		</dependency>
-		<!-- 说明：由于h2依赖下载一直出问题，故直接采用本地Jar包 -->
+		
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<version>1.4.190</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<finalName>h2</finalName>
