@@ -1,0 +1,10 @@
+命令：
+wsimport -d E:\learn\webservice\byjdk-wsimport\src -keep -verbose http://localhost:8080/extService?wsdl
+
+说明：
+-d 表示输出的目录，目录必须事先存在，否则导出失败
+-keep表示导出webservice的class文件时是否也导出源代码java文件
+-verbose表示详细信息
+
+结果：
+在指定的目录下生成com.qlc.test.byjdk包，可以将该包删除自己做测试(注意项目所在目录)
