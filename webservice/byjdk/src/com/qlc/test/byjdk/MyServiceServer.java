@@ -1,5 +1,6 @@
 package com.qlc.test.byjdk;
 
+import javax.jws.WebParam;
 import javax.jws.WebService;
 import javax.xml.ws.Endpoint;
 /**
@@ -14,7 +15,7 @@ import javax.xml.ws.Endpoint;
 public class MyServiceServer implements MyService{
 	
 	@Override
-	public String sayHi(String value) {
+	public String sayHi(@WebParam(name="value")String value) {//该标记 以后都要加上
 		return "Hi:"+value;
 	}
 	
