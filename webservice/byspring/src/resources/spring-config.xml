@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+
+	<bean id="myService" class="com.test.qlc.service.impl.MyServiceImpl" />
+	<bean id="myInterceptor" class="com.test.qlc.service.impl.MyInterceptor" />
+	<!-- address访问地址，为相对路径
+	     implementor指定服务实现类，可以直接指定类名也可以为#实例名(如下)
+    -->
+	<jaxws:endpoint id="hello" implementor="#myService" address="/hello" />
+	
+	<!-- 客户端生成：方法一  -->
+	<import resource="client.xml"/>
+	
+	<!-- 客户端生成：方法二  -->
+	<!-- <jaxws:client id="helloClient" serviceClass="com.test.qlc.service.MyService" address="http://localhost:8080/byspring/services/hello"/> -->
+	
+</beans>

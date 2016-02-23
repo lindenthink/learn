@@ -1,0 +1,8 @@
+1、项目使用GBK编码
+2、本项目发布的WebService服务使用spring集成的cxf方法，
+       需要启动web项目，这是因为用到了cxf内嵌的jetty进行服务发布，
+       而该服务以配置为servlet进行启动
+
+        而客户端测试程序则包含两种（一种为spring集成的cxf配置方法，
+        另一种为普通的spring管理的bean配置）均位于单元测试中
+3、项目中涉及到复杂类型的jaxb绑定
