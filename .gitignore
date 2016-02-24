@@ -10,7 +10,7 @@ Servers/
 .gitignore
 .project
 .settings
-
+.externalToolBuilders/
 
 .springBeans
 .springWebflow
